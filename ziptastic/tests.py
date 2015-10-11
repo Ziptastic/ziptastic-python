@@ -60,7 +60,3 @@ class TestZiptasticLib(unittest.TestCase):
     def test_object_is_returned(self):
         result = Ziptastic.get_from_postal_code('48867')
         self.assertTrue(type(result), 'object')
-
-
-if __name__ == '__main__':
-    unittest.main()
