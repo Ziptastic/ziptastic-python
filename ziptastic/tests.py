@@ -1,5 +1,4 @@
 import unittest
-from mock import patch, Mock
 import requests_mock
 from nose.tools import eq_
 from json import loads
@@ -45,5 +44,4 @@ class TestZiptasticLib(unittest.TestCase):
         version = 'v42'
         endpoint = 'test.endpoint'
         correct_url = 'https://test.endpoint/v42'
-        self.assertEquals(correct_url, Ziptastic.build_url(endpoint,
-                                                           version=version))
+        eq_(correct_url, Ziptastic.build_url(endpoint, version=version))
