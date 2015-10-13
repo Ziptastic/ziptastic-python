@@ -13,5 +13,5 @@ Official python library for GetZiptastic.com
     from ziptastic import Ziptastic
     
     # Set your API key. (Available at https://www.getziptastic.com/dashboard)
-    Ziptastic.api_key = '<your api key>'
-    result = Ziptastic.get_from_postal_code('48867')
+    api = Ziptastic('<your api key>')
+    result = api.get_from_postal_code('48867')
