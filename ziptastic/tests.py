@@ -3,7 +3,7 @@ import requests_mock
 from nose.tools import eq_
 from json import loads
 
-from ziptastic import Ziptastic
+from .ziptastic import Ziptastic
 
 compare_v3_json = """[{"city": "Owosso", "country": "US",
     "county": "Shiawassee", "state": "Michigan", "state_short": "MI",
