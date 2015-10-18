@@ -1,6 +1,6 @@
 alabaster==0.7.6
 Babel==2.1.1
-coverage==4.0
+coverage==4.0.1
 docutils==0.12
 funcsigs==0.4
 Jinja2==2.8
