@@ -3,11 +3,12 @@ import requests_mock
 from nose.tools import eq_
 from json import loads
 
-from .ziptastic import Ziptastic
+from .ziptastic import Ziptastic, ZiptasticAPIKeyRequiredException
 
-compare_v3_json = """[{"city": "Owosso", "country": "US",
-    "county": "Shiawassee", "state": "Michigan", "state_short": "MI",
-    "postal_code": "48867"}]"""
+compare_v3_json = """[{"city": "Owosso", "geohash": "dpshsfsytw8k",
+    "country": "US", "county": "Shiawassee", "state": "Michigan",
+    "state_short": "MI", "postal_code": "48867", "latitude": 42.9934,
+    "longitude": -84.1595, "timezone": "America/Detroit"}]"""
 
 compare_v2_json = """{"city": "Owosso", "country": "US",
     "county": "Shiawassee", "state": "Michigan", "state_short": "MI",
@@ -39,6 +40,31 @@ class TestZiptasticLib(unittest.TestCase):
         req = m.request_history[0]
         eq_(url, req.url)
         eq_(loads(compare_v2_json), result)
+
+    @requests_mock.mock()
+    def test_reverse_geocoding(self, m):
+        latitude = '42.9934'
+        longitude = '-84.1595'
+        url = 'https://zip.getziptastic.com/v3/' + latitude + '/' + longitude
+
+        m.get(url, text=compare_v3_json)
+        ziptastic = Ziptastic('abc123')
+        result = ziptastic.get_from_coordinates(latitude, longitude)
+
+        req = m.request_history[0]
+        eq_(url, req.url)
+        eq_(loads(compare_v3_json), result)
+
+    @requests_mock.mock()
+    def test_reverse_geocoding_api_key(self, m):
+        latitude = '42.9934'
+        longitude = '-84.1595'
+        url = 'https://zip.getziptastic.com/v3/' + latitude + '/' + longitude
+
+        m.get(url, text=compare_v3_json)
+        ziptastic = Ziptastic('')
+        self.assertRaises(ZiptasticAPIKeyRequiredException,
+                          ziptastic.get_from_coordinates, latitude, longitude)
 
     def test_build_url(self):
         version = 'v42'

@@ -1,6 +1,10 @@
 import requests
 
 
+class ZiptasticAPIKeyRequiredException(Exception):
+    pass
+
+
 class Ziptastic(object):
     """Ziptastic Python Module"""
 
@@ -36,6 +40,27 @@ class Ziptastic(object):
 
         url = "{uri}/{country}/{postal_code}".format(uri=uri, country=country,
                                                      postal_code=postal_code)
+
+        r = requests.get(url, headers=headers)
+
+        return r.json()
+
+    def get_from_coordinates(self, latitude, longitude):
+        """Get geo data from coordinates"""
+
+        headers = {}
+
+        #: If no api_key is set then default to Version 2 of Ziptastic API.
+        if self.api_key:
+            headers.update({
+                "x-key": self.api_key
+            })
+            uri = self.build_url(self.endpoint)
+        else:
+            raise ZiptasticAPIKeyRequiredException
+
+        url = "{uri}/{latitude}/{longitude}".format(uri=uri, latitude=latitude,
+                                                    longitude=longitude)
 
         r = requests.get(url, headers=headers)
 
