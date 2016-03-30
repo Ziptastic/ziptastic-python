@@ -9,9 +9,29 @@ Official python library for GetZiptastic.com
     pip install ziptastic-python (coming soon)
 
 
+## Testing
+`$ nosetests`
+
+With coverage
+
+`$ nosetests --with-coverage --cover-package=ziptastic`
+
+
 ## Usage
-    from ziptastic import Ziptastic
-    
-    # Set your API key. (Available at https://www.getziptastic.com/dashboard)
-    api = Ziptastic('<your api key>')
-    result = api.get_from_postal_code('48867')
+### Forward geocoding
+```python
+from ziptastic import Ziptastic
+
+# Set your API key. (Available at https://www.getziptastic.com/dashboard)
+api = Ziptastic('<your api key>')
+result = api.get_from_postal_code('48867')
+```
+
+### Reverse geocoding
+```python
+from ziptastic import Ziptastic
+
+# Set API key.
+api = Ziptastic('<your api key>')
+result = api.get_from_coordinates('42.9934', '-84.1595')
+```
