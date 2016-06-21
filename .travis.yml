@@ -9,9 +9,9 @@ python:
 # command to install dependencies
 install: 
   - pip install -r requirements.txt
-  - pip install coveralls
+  - pip install codecov
 # command to run tests
 script: nosetests --with-coverage --cover-package=ziptastic
 
 after_success:
-  coveralls
+  codecov
