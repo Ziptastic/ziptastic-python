@@ -2,7 +2,8 @@
 Official python library for GetZiptastic.com
 
 [![Documentation Status](https://readthedocs.org/projects/ziptastic-python/badge/?version=latest)](http://ziptastic-python.readthedocs.org/en/latest/?badge=latest)
-[![Build Status](https://travis-ci.org/Ziptastic/ziptastic-python.svg?branch=master)](https://travis-ci.org/Ziptastic/ziptastic-python)
+[![CircleCI Status](https://circleci.com/gh/ziptastic/ziptastic-python.png)]
+[![Travis Status](https://travis-ci.org/Ziptastic/ziptastic-python.svg?branch=master)](https://travis-ci.org/Ziptastic/ziptastic-python)
 [![Coverage Status](https://codecov.io/gh/ziptastic/ziptastic-python/branch/master/graph/badge.svg)](https://codecov.io/gh/ziptastic/ziptastic-python/branch/master)
 
 ## Installation
