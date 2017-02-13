@@ -1,38 +1,53 @@
-# Official Ziptastic Python Library
-Official python library for GetZiptastic.com
-
-[![Documentation Status](https://readthedocs.org/projects/ziptastic-python/badge/?version=latest)](http://ziptastic-python.readthedocs.org/en/latest/?badge=latest)
-[![CircleCI Status](https://circleci.com/gh/Ziptastic/ziptastic-python.png)](https://circleci.com/gh/Ziptastic/ziptastic-python)
-[![Travis Status](https://travis-ci.org/Ziptastic/ziptastic-python.svg?branch=master)](https://travis-ci.org/Ziptastic/ziptastic-python)
-[![Coverage Status](https://codecov.io/gh/ziptastic/ziptastic-python/branch/master/graph/badge.svg)](https://codecov.io/gh/ziptastic/ziptastic-python/branch/master)
-
-## Installation
-    pip install ziptastic-python (coming soon)
+Official Ziptastic Python Library
+=================================
 
 
-## Testing
-`$ nosetests`
+Python library for `GetZiptastic.com <https://www.getziptastic.com>`_
+---------------------------------------------------------------------
 
-With coverage
+.. image:: https://readthedocs.org/projects/ziptastic-python/badge/?version=latest
+   :target: http://ziptastic-python.readthedocs.org/en/latest/?badge=latest
 
-`$ nosetests --with-coverage --cover-package=ziptastic`
+.. image:: https://codecov.io/gh/ziptastic/ziptastic-python/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/ziptastic/ziptastic-python/branch/master
+
+.. image:: https://travis-ci.org/Ziptastic/ziptastic-python.svg?branch=master
+   :target: https://travis-ci.org/Ziptastic/ziptastic-python
+
+.. image:: https://circleci.com/gh/Ziptastic/ziptastic-python.png
+   :target: https://circleci.com/gh/Ziptastic/ziptastic-python
+
+Installation
+------------
+
+    >>> pip install ziptastic-python
 
 
-## Usage
-### Forward geocoding
-```python
-from ziptastic import Ziptastic
+Running tests
+-------------
 
-# Set your API key. (Available at https://www.getziptastic.com/dashboard)
-api = Ziptastic('<your api key>')
-result = api.get_from_postal_code('48867')
-```
+    $ nosetests
 
-### Reverse geocoding
-```python
-from ziptastic import Ziptastic
+Running tests with coverage
+---------------------------
 
-# Set API key.
-api = Ziptastic('<your api key>')
-result = api.get_from_coordinates('42.9934', '-84.1595')
-```
+    $ nosetests --with-coverage --cover-package=ziptastic
+
+
+Usage
+=====
+
+Forward geocoding
+-----------------
+
+    >>> from ziptastic import Ziptastic
+    >>> api = Ziptastic('<your api key>')
+    >>> result = api.get_from_postal_code('48867')
+
+
+Reverse geocoding
+-----------------
+
+    >>> from ziptastic import Ziptastic
+    >>> api = Ziptastic('<your api key>')
+    >>> result = api.get_from_coordinates('42.9934', '-84.1595')
