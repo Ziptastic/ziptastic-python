@@ -3,7 +3,9 @@ import requests_mock
 from nose.tools import eq_
 from json import loads
 
-from .ziptastic import Ziptastic, ZiptasticAPIKeyRequiredException
+from ziptastic import Ziptastic
+from ziptastic import ZiptasticAPIKeyRequiredException
+
 
 compare_v3_json = """[{"city": "Owosso", "geohash": "dpshsfsytw8k",
     "country": "US", "county": "Shiawassee", "state": "Michigan",
