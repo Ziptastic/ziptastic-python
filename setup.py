@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='ziptastic-python',
-    version='1.0.0b1',
+    version='1.0.0b2',
 
     description='Official GetZiptastic.com library.',
     long_description=long_description,
