@@ -3,7 +3,7 @@ dependencies:
     - pip install --upgrade pip codecov
     - pip install -r requirements.txt
     # latest as of Nov. 7, 2016: 2.7.12, 3.4.5, 3.5.2
-    - pyenv local 2.7.14 3.4.8 3.5.5 3.6.4
+    - pyenv local 2.7.12 3.4.8 3.5.5 3.6.4
 
 test:
   override:
