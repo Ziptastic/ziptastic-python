@@ -5,12 +5,12 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
     name='ziptastic-python',
-    version='1.0.0b1',
+    version='1.0.0b2',
 
     description='Official GetZiptastic.com library.',
     long_description=long_description,
