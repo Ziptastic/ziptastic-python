@@ -7,6 +7,7 @@ dependencies:
 
 test:
   override:
+    - pip install requests-mock
     - nosetests --with-coverage --cover-package=ziptastic
   post:
     - codecov
